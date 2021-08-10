@@ -72,6 +72,12 @@
     }
 
     async function getUserProfile() {
+      const profile = await liff.getProfile()
+      document.getElementsById("pictureUrl").src = profile.pictureUrl
+      document.getElementsById("userId").append(profile.userId)
+      document.getElementsById("statusMessage").append(profile.statusMessage)
+      document.getElementsById("displayName").append(profile.displayName)
+
     }
 
     function getEnvironment() {
@@ -80,19 +86,20 @@
       document.getElementById("version").append(liff.getVersion())
       document.getElementById("accessToken").append(liff.getAccessToken())
       document.getElementById("isInClient").append(liff.isInClient())
-      if (liff.isInClient()){
-        document.getElementById("btnLogOut").style.display = "none"
-      }else{
-        document.getElementById("btnMsg").style.display = "none"
-        document.getElementById("btnScanCode").style.display = "none"
-        document.getElementById("btnClose").style.display = "none"
-      }
+          if (liff.isInClient()){
+            document.getElementById("btnLogOut").style.display = "none"
+          }else{
+            document.getElementById("btnMsg").style.display = "none"
+            document.getElementById("btnScanCode").style.display = "none"
+            document.getElementById("btnClose").style.display = "none"
+          }
     }
+    
 
     async function main() {
       await liff.init({ liffId: "1656301318-nKPqgjJQ" })
        getEnvironment()
-      // getUserProfile()
+       getUserProfile()
       // getContext()
       // getFriendship()
       // createUniversalLink()
