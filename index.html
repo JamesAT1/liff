@@ -74,15 +74,11 @@
     }
 
     async function sendMsg() {
-      const profile = await liff.getProfile()
-      const result = document.getElementById("decodedIDToken").append(liff.getDecodedIDToken().email)
       if(liff.getContext().type !== "none"){
         await liff.sendMessages([
           {
             "type" : "text",
-            "text": "ต้องการ การติดต่อกลับ " + result 
-
-          
+            "text": "ต้องการ การติดต่อกลับ " + <p id="decodedIDToken"></p>
           }
           
         ])
