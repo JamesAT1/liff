@@ -60,6 +60,10 @@
     }
 
     function openWindow() {
+      liff.openWindow({
+        url:"https://google.com",
+        external: true
+      })
     }
 
     async function getFriendship() {
@@ -78,7 +82,7 @@
         await liff.sendMessages([
           {
             "type" : "text",
-            "text": "ต้องการ การติดต่อกลับ " + "<p id='decodedIDToken'></p>"
+            "text": "ต้องการ การติดต่อกลับ"
           }
           
         ])
