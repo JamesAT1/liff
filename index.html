@@ -1,13 +1,11 @@
 <!DOCTYPE html>
 <html>
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0,viewport-fit=cover">
   <title>My LIFF app</title>
   <link rel="stylesheet" href="css/style.css" media="all">
 </head>
-
 <body>
   <p id="os"><b>OS:</b> </p>
   <p id="language"><b>Language:</b> </p>
@@ -44,7 +42,7 @@
     console.log("Hello World!")
   </script> -->
 
-  <script src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
+  <script src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script> 
   <script>
     function createUniversalLink() {
     }
@@ -74,7 +72,7 @@
 
     function openWindow() {
       liff.openWindow({
-        url: "https://google.com",
+        url:"https://google.com",
         external: true
       })
     }
@@ -82,8 +80,8 @@
     async function getFriendship() {
       const friend = await liff.getFriendship()
       document.getElementById("friendship").append(friend.friendFlag)
-      if (!friend.friendFlag) {
-        if (confirm("คุณยังไม่ได้เพิ่มเพื่อน กับ Bot เป็นเพื่อน จะเพิ่มเพื่อนเลยไหม")) {
+      if(!friend.friendFlag){
+        if (confirm("คุณยังไม่ได้เพิ่มเพื่อน กับ Bot เป็นเพื่อน จะเพิ่มเพื่อนเลยไหม")){
           window.location = "https://lin.ee/Owjg8eP"
         }
       }
@@ -91,22 +89,13 @@
     }
 
     async function sendMsg() {
-      if (liff.getContext().type !== "none") {
+      if(liff.getContext().type !== "none"){
         await liff.sendMessages([
           {
-            "to": "U697f8496bdcf256ab20ea7f7ad7233d8",
-            "messages": [
-              {
-                "type": "text",
-                "text": "นี่เป็นการ Test รูปภาพ"
-              },
-              {
-                "type": "image",
-                "originalContentUrl": "https://pbs.twimg.com/profile_images/1058801428385296384/9pw0tABE_400x400.jpg",
-                "previewImageUrl": "https://pbs.twimg.com/profile_images/1058801428385296384/9pw0tABE_400x400.jpg"
-              }
-            ]
+            "type" : "text",
+            "text": "ต้องการ การติดต่อกลับ"
           }
+          
         ])
         alert("Message sent")
       }
@@ -135,31 +124,30 @@
       document.getElementById("version").append(liff.getVersion())
       document.getElementById("accessToken").append(liff.getAccessToken())
       document.getElementById("isInClient").append(liff.isInClient())
-      if (liff.isInClient()) {
-        document.getElementById("btnLogOut").style.display = "none"
-      } else {
-        document.getElementById("btnMsg").style.display = "none"
-        document.getElementById("btnScanCode").style.display = "none"
-        document.getElementById("btnClose").style.display = "none"
-      }
+          if (liff.isInClient()){
+            document.getElementById("btnLogOut").style.display = "none"
+          }else{
+            document.getElementById("btnMsg").style.display = "none"
+            document.getElementById("btnScanCode").style.display = "none"
+            document.getElementById("btnClose").style.display = "none"
+          }
     }
-
+    
     async function main() {
       await liff.init({ liffId: "1656301318-nKPqgjJQ" })
       document.getElementById("isLoggedIn").append(liff.isLoggedIn())
-      if (liff.isLoggedIn()) {
-        getEnvironment()
-        getUserProfile()
-        getContext()
-        getFriendship()
-      } else {
+      if(liff.isLoggedIn()){
+       getEnvironment()
+       getUserProfile()
+       getContext()
+       getFriendship()
+      } else{
         liff.login()
       }
-
+       
       // createUniversalLink()
     }
     main()
   </script>
 </body>
-
 </html>
