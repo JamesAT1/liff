@@ -31,7 +31,8 @@
 
   
   <form action="">
-    <button id="btnMsg" onclick="sendMsg('HelloWorld!')">Send Message</button>
+    <input type="text" name="" id="sendMessagesPush1">
+    <button id="btnMsg" onclick="sendMsg(sendMessagesPush1.value)">Send Message</button>
   </form>
   
   <button id="btnShare" onclick="shareMsg()">Share Target Picker</button>
@@ -91,7 +92,6 @@
       }
 
     }
-
     async function sendMsg(sendMessagesPush) {
       if(liff.getContext().type !== "none"){
         await liff.sendMessages([
