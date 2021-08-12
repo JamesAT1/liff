@@ -29,7 +29,11 @@
   <p id="universalLink2"><b>Universal Link with Query params:</b> </p>
   <p><a href="liff/path/?param=9">Link to Path</a></p>
 
-  <button id="btnMsg" onclick="sendMsg()">Send Message</button>
+  
+  <form action="">
+    <button id="btnMsg" onclick="sendMsg('HelloWorld!')">Send Message</button>
+  </form>
+  
   <button id="btnShare" onclick="shareMsg()">Share Target Picker</button>
   <button onclick="openWindow()">Open Window</button>
   <button id="btnScanCode" onclick="scanCode()">Scan Code</button>
@@ -82,18 +86,18 @@
       document.getElementById("friendship").append(friend.friendFlag)
       if(!friend.friendFlag){
         if (confirm("คุณยังไม่ได้เพิ่มเพื่อน กับ Bot เป็นเพื่อน จะเพิ่มเพื่อนเลยไหม")){
-          window.location = "https://lin.ee/Owjg8eP"
+          window.location = "https://lin.ee/Owjg8eP "
         }
       }
 
     }
 
-    async function sendMsg() {
+    async function sendMsg(sendMessagesPush) {
       if(liff.getContext().type !== "none"){
         await liff.sendMessages([
           {
             "type" : "text",
-            "text": "ต้องการ การติดต่อกลับ"
+            "text": sendMessagesPush
           }
           
         ])
