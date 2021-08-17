@@ -93,12 +93,12 @@
 
     }
     async function sendMsg() {
-      let sendUserId = document.getElementById("userId").value
+      var sendUserId = document.getElementById("userId").value
       if(liff.getContext().type !== "none"){
           await liff.sendMessages([
           {
             "type" : "text",
-            "text": sendUserId
+            "text" : "" + sendUserId
           }
         ])
         alert("Message sent")
