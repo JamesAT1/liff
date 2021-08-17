@@ -31,7 +31,7 @@
 
   
 
-    <button id="btnMsg" onclick="sendMsg(userId.value)">Send Message</button>
+    <button id="btnMsg" onclick="sendMsg()">Send Message</button>
 
   
   <button id="btnShare" onclick="shareMsg()">Share Target Picker</button>
@@ -91,12 +91,12 @@
       }
 
     }
-    async function sendMsg(SendUserId) {
+    async function sendMsg() {
       if(liff.getContext().type !== "none"){
           await liff.sendMessages([
           {
             "type" : "text",
-            "text": SendUserId
+            "text": "SendUserId"
           }
         ])
         alert("Message sent")
