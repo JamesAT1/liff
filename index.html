@@ -13,7 +13,7 @@
   <p id="isInClient"><b>isInClient:</b> </p>
   <p id="accessToken"><b>AccessToken:</b> </p>
   <img id="pictureUrl">
-  <input type="text" id="userId" />
+  <p id="userId"><b>userId:</b> </p>
   <p id="displayName"><b>displayName:</b> </p>
   <p id="statusMessage"><b>statusMessage:</b> </p>
   <p id="decodedIDToken"><b>email:</b> </p>
@@ -31,7 +31,7 @@
 
   
 
-    <button id="btnMsg" onclick="sendMsg(userId.value)">Send Message</button>
+    <button id="btnMsg" onclick="sendMsg()">Send Message</button>
 
   
   <button id="btnShare" onclick="shareMsg()">Share Target Picker</button>
@@ -93,12 +93,13 @@
       }
 
     }
-    async function sendMsg(sendUserId) {
+    async function sendMsg() {
+      var sendUserId = document.getElementById("userId").value
       if(liff.getContext().type !== "none"){
           await liff.sendMessages([
           {
             "type" : "text",
-            "text" : sendUserId
+            "text" : "" + sendUserId
           }
         ])
         alert("Message sent")
