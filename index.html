@@ -48,6 +48,7 @@
 
   <script src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script> 
   <script>
+
     function createUniversalLink() {
     }
 
@@ -92,11 +93,12 @@
 
     }
     async function sendMsg() {
+      let sendUserId = document.getElementById("userId").value
       if(liff.getContext().type !== "none"){
           await liff.sendMessages([
           {
             "type" : "text",
-            "text": "SendUserId"
+            "text": sendUserId
           }
         ])
         alert("Message sent")
