@@ -30,10 +30,9 @@
   <p><a href="liff/path/?param=9">Link to Path</a></p>
 
   
-  <form action="">
-    <input type="text" name="" id="sendMessagesPush1">
-    <button id="btnMsg" onclick="sendMsg(sendMessagesPush1.value)">Send Message</button>
-  </form>
+  
+    <button id="btnMsg" onclick="sendMsg()">Send Message</button>
+
 
   <button id="btnScanCode" onclick="scanCode()">Scan Code</button>
 
@@ -89,7 +88,7 @@
       }
 
     }
-    async function sendMsg(sendMessagesPush) {
+    async function sendMsg() {
       if(liff.getContext().type !== "none"){
         if(sendMessagesPush == null){
           alert("Message sent eror")
