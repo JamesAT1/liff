@@ -34,12 +34,9 @@
     <input type="text" name="" id="sendMessagesPush1">
     <button id="btnMsg" onclick="sendMsg(sendMessagesPush1.value)">Send Message</button>
   </form>
-  
-  <button id="btnShare" onclick="shareMsg()">Share Target Picker</button>
-  <button onclick="openWindow()">Open Window</button>
+
   <button id="btnScanCode" onclick="scanCode()">Scan Code</button>
-  <button id="btnLogOut" onclick="logOut()">Log Out</button>
-  <button id="btnClose" onclick="closed()">Close</button>
+
 
   <!-- <script src="js/vconsole.min.js"></script> -->
   <!-- <script>
@@ -94,14 +91,17 @@
     }
     async function sendMsg(sendMessagesPush) {
       if(liff.getContext().type !== "none"){
-        await liff.sendMessages([
+        if(sendMessagesPush == null){
+          alert("Message sent eror")
+        }else{
+          await liff.sendMessages([
           {
             "type" : "text",
-            "text": sendMessagesPush
+            "text": "tesst"
           }
-          
         ])
         alert("Message sent")
+        }
       }
     }
 
