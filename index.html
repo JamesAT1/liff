@@ -53,10 +53,11 @@
     }
 
     async function shareMsg() {
+      var sendUserId = document.getElementById("userId").value
       await liff.shareTargetPicker([
         {
           "type": "text",
-          "text": "This message was sent by ShareTargetPicker"
+          "text": sendUserId
         }
       ])
     }
