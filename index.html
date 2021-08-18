@@ -7,17 +7,11 @@
   <link rel="stylesheet" href="css/style.css" media="all">
 </head>
 <body>
-  <p id="os"><b>OS:</b> </p>
-  <p id="language"><b>Language:</b> </p>
-  <p id="version"><b>Version:</b> </p>
-  <p id="isInClient"><b>isInClient:</b> </p>
-  <p id="accessToken"><b>AccessToken:</b> </p>
-  <img id="pictureUrl">
+  <img id="pictureUrl" width="110%">
   <p id="userId"><b>userId:</b> </p>
-  <p id="displayName"><b>displayName:</b> </p>
-  <p id="statusMessage"><b>statusMessage:</b> </p>
+  <p id="displayName"><b>สวัสดีคุณ:</b> </p>
   <p id="decodedIDToken"><b>email:</b> </p>
-  <p id="type"><b>type:</b> </p>
+  <!-- <p id="type"><b>type:</b> </p>
   <p id="viewType"><b>viewType:</b> </p>
   <p id="utouId"><b>utouId:</b> </p>
   <p id="roomId"><b>roomId:</b> </p>
@@ -27,11 +21,10 @@
   <p id="isLoggedIn"><b>isLoggedIn:</b> </p>
   <p id="universalLink1"><b>Universal Link:</b> </p>
   <p id="universalLink2"><b>Universal Link with Query params:</b> </p>
-  <p><a href="liff/path/?param=9">Link to Path</a></p>
+  <p><a href="liff/path/?param=9">Link to Path</a></p> -->
 
-  
 
-    <button id="btnMsg" onclick="sendMsg(userId.value)">Send Message</button>
+  <button id="btnMsg" onclick="sendMsg()">Send Message</button>
 
   
   <button id="btnShare" onclick="shareMsg()">Share Target Picker</button>
@@ -93,13 +86,13 @@
       }
 
     }
-    async function sendMsg(sendUserId) {
-      var sendUserId = document.getElementById("userId").value
+    async function sendMsg() {
+      var sendUsersId = document.getElementById("userId").textContent;
       if(liff.getContext().type !== "none"){
           await liff.sendMessages([
           {
             "type" : "text",
-            "text" : "" + sendUserId
+            "text" :  sendUsersId 
           }
         ])
         alert("Message sent")
