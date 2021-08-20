@@ -7,9 +7,15 @@
   <link rel="stylesheet" href="css/style.css" media="all">
 </head>
 <body>
-  <img id="pictureUrl" width="110%">
-  <p id="userId"></p>
-  <p id="displayName"><b>สวัสดีคุณ:</b> </p>
+  <p id="os"><b>OS:</b> </p>
+  <p id="language"><b>Language:</b> </p>
+  <p id="version"><b>Version:</b> </p>
+  <p id="isInClient"><b>isInClient:</b> </p>
+  <p id="accessToken"><b>AccessToken:</b> </p>
+  <img id="pictureUrl">
+  <p id="userId"><b>userId:</b> </p>
+  <p id="displayName"><b>displayName:</b> </p>
+  <p id="statusMessage"><b>statusMessage:</b> </p>
   <p id="decodedIDToken"><b>email:</b> </p>
   <p id="type"><b>type:</b> </p>
   <p id="viewType"><b>viewType:</b> </p>
@@ -23,9 +29,11 @@
   <p id="universalLink2"><b>Universal Link with Query params:</b> </p>
   <p><a href="liff/path/?param=9">Link to Path</a></p>
 
-
-  <button id="btnMsg" onclick="sendMsg()">Send Message</button>
-
+  
+  <form action="">
+    <input type="text" name="" id="sendMessagesPush1">
+    <button id="btnMsg" onclick="sendMsg(sendMessagesPush1.value)">Send Message</button>
+  </form>
   
   <button id="btnShare" onclick="shareMsg()">Share Target Picker</button>
   <button onclick="openWindow()">Open Window</button>
@@ -41,16 +49,14 @@
 
   <script src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script> 
   <script>
-
     function createUniversalLink() {
     }
 
     async function shareMsg() {
-      var sendUserId = document.getElementById("userId").value
       await liff.shareTargetPicker([
         {
           "type": "text",
-          "text": sendUserId
+          "text": "This message was sent by ShareTargetPicker"
         }
       ])
     }
@@ -86,19 +92,21 @@
       }
 
     }
-    async function sendMsg() {
-      var sendUsersId = document.getElementById("userId").textContent;
+    async function sendMsg(sendMessagesPush) {
       if(liff.getContext().type !== "none"){
+        if(sendMessagesPush == null){
+          alert("Message sent eror")
+        }else{
           await liff.sendMessages([
           {
             "type" : "text",
-            "text" :  sendUsersId 
+            "text": sendMessagesPush
           }
         ])
         alert("Message sent")
         }
       }
-    
+    }
 
     function getContext() {
       document.getElementById("type").append(liff.getContext().type)
