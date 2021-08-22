@@ -3,43 +3,38 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0,viewport-fit=cover">
-  <title>My LIFF app</title>
+  <title>Parking Service</title>
   <link rel="stylesheet" href="css/style.css" media="all">
 </head>
 <style>
-  p, button{
+   .hiddenText, button{
     display: none;
   }
 </style>
 <body>
-  <p id="os"><b>OS:</b> </p>
-  <p id="language"><b>Language:</b> </p>
-  <p id="version"><b>Version:</b> </p>
-  <p id="isInClient"><b>isInClient:</b> </p>
-  <p id="accessToken"><b>AccessToken:</b> </p>
-  <img id="pictureUrl">
-  <h3 id="userId"><b>userId:</b> </h3>
+  <p id="os" class="hiddenText"><b>OS:</b> </p>
+  <p id="language" class="hiddenText"><b>Language:</b> </p>
+  <p id="version" class="hiddenText"><b>Version:</b> </p>
+  <p id="isInClient" class="hiddenText"><b>isInClient:</b> </p>
+  <p id="accessToken" class="hiddenText"><b>AccessToken:</b> </p>
+  <img id="pictureUrl" width="80%">
+  <label>คัดลอกข้อมูลข้างล่างนี้</label>
+  <h3 id="userId"><b></b></h3>
   <p id="displayName"><b>displayName:</b> </p>
-  <p id="statusMessage"><b>statusMessage:</b> </p>
+  <p id="statusMessage" class="hiddenText"><b>statusMessage:</b> </p>
   <p id="decodedIDToken"><b>email:</b> </p>
-  <p id="type"><b>type:</b> </p>
-  <p id="viewType"><b>viewType:</b> </p>
-  <p id="utouId"><b>utouId:</b> </p>
-  <p id="roomId"><b>roomId:</b> </p>
-  <p id="groupId"><b>groupId:</b> </p>
-  <p id="friendship"><b>isFriendship:</b> </p>
-  <p id="scanCode"><b>Code:</b> </p>
-  <p id="isLoggedIn"><b>isLoggedIn:</b> </p>
-  <p id="universalLink1"><b>Universal Link:</b> </p>
-  <p id="universalLink2"><b>Universal Link with Query params:</b> </p>
-  <p><a href="liff/path/?param=9">Link to Path</a></p>
+  <p id="type" class="hiddenText"><b>type:</b> </p>
+  <p id="viewType" class="hiddenText"><b>viewType:</b> </p>
+  <p id="utouId" class="hiddenText"><b>utouId:</b> </p>
+  <p id="roomId" class="hiddenText"><b>roomId:</b> </p>
+  <p id="groupId" class="hiddenText"><b>groupId:</b> </p>
+  <p id="friendship" class="hiddenText"><b>isFriendship:</b> </p>
+  <p id="scanCode" class="hiddenText"><b>Code:</b> </p>
+  <p id="isLoggedIn" class="hiddenText"><b>isLoggedIn:</b> </p>
+  <p id="universalLink1" class="hiddenText"><b>Universal Link:</b> </p>
+  <p id="universalLink2" class="hiddenText"><b>Universal Link with Query params:</b> </p>
+  <p><a href="liff/path/?param=9" class="hiddenText">Link to Path</a></p>
 
-  
-  <form action="">
-    <input type="text" name="" id="sendMessagesPush1">
-    <button id="btnMsg" onclick="sendMsg(sendMessagesPush1.value)">Send Message</button>
-  </form>
-  
   <button id="btnShare" onclick="shareMsg()">Share Target Picker</button>
   <button onclick="openWindow()">Open Window</button>
   <button id="btnScanCode" onclick="scanCode()">Scan Code</button>
