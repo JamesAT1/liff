@@ -41,9 +41,9 @@
  
   
   <button id="btnShare" onclick="shareMsg()">Share Target Picker</button>
-  <button onclick="openWindow()">Open Window</button>
+  <button onclick="openWindow()" class="btn btn-success">เว็ปไซต์ของเรา</button>
   <button id="btnScanCode" onclick="scanCode()">Scan Code</button>
-  <button id="btnLogOut" onclick="logOut()">Log Out</button>
+  <button id="btnLogOut" onclick="logOut()" class="btn btn-danger">Log Out</button>
   <button id="btnClose" onclick="closed()">Close</button>
 
   <!-- <script src="js/vconsole.min.js"></script> -->
@@ -82,7 +82,7 @@
 
     function openWindow() {
       liff.openWindow({
-        url:"https://google.com",
+        url:"http://localhost:8123/",
         external: true
       })
     }
