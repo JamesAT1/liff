@@ -6,20 +6,15 @@
   <title>My LIFF app</title>
   <link rel="stylesheet" href="css/style.css" media="all">
 </head>
-<style>
-  p{
-    display: none;
-  }
-</style>
 <body>
   <p id="os"><b>OS:</b> </p>
   <p id="language"><b>Language:</b> </p>
   <p id="version"><b>Version:</b> </p>
   <p id="isInClient"><b>isInClient:</b> </p>
-  <p id="accessToken"><b></b></p>
-  <img id="pictureUrl" width="40%">
-  <h3 id="userId"><b></b></h3>
-  <h5 id="displayName"><b>displayName:</b> </h5>
+  <p id="accessToken"><b>AccessToken:</b> </p>
+  <img id="pictureUrl">
+  <p id="userId"><b>userId:</b> </p>
+  <p id="displayName"><b>displayName:</b> </p>
   <p id="statusMessage"><b>statusMessage:</b> </p>
   <p id="decodedIDToken"><b>email:</b> </p>
   <p id="type"><b>type:</b> </p>
@@ -35,7 +30,10 @@
   <p><a href="liff/path/?param=9">Link to Path</a></p>
 
   
-
+  <form action="">
+    <input type="text" name="" id="sendMessagesPush1">
+    <button id="btnMsg" onclick="sendMsg(sendMessagesPush1.value)">Send Message</button>
+  </form>
   
   <button id="btnShare" onclick="shareMsg()">Share Target Picker</button>
   <button onclick="openWindow()">Open Window</button>
