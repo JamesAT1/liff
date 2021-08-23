@@ -145,15 +145,15 @@
        
       // createUniversalLink()
     }
-        async function sendMsg(sendMessagesPush) {
+        async function sendMsg() {
       if(liff.getContext().type !== "none"){
-        if(sendMessagesPush == null){
+        if("" == null){
           alert("Message sent eror")
         }else{
           await liff.sendMessages([
           {
             "type" : "text",
-            "text": sendMessagesPush
+            "text": "test"
           }
         ])
         alert("Message sent")
