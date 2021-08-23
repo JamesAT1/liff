@@ -17,7 +17,7 @@
   <p id="os"><b>OS:</b> </p>
   <p id="language"><b>Language:</b> </p>
   <p id="version"><b>Version:</b> </p>
-  <p id="isInClient"><b>isInClient:</b> </p>
+  <h3 id="isInClient"><b>isInClient:</b> </h3>
   <p id="accessToken" style="display: none;"><b>AccessToken:</b> </p>
   <img id="pictureUrl" width="80%">
   <h4 id="displayName"><b>สวัสดีคุณ </b> </h4>
@@ -125,7 +125,7 @@
           if (liff.isInClient()){
             document.getElementById("btnLogOut").style.display = "none"
           }else{
-
+            document.getElementById("btnMsg").style.display = "none"
             document.getElementById("btnScanCode").style.display = "none"
             document.getElementById("btnClose").style.display = "none"
           }
@@ -147,17 +147,13 @@
     }
         async function sendMsg() {
       if(liff.getContext().type !== "none"){
-        if("" == null){
-          alert("Message sent eror")
-        }else{
           await liff.sendMessages([
           {
             "type" : "text",
             "text": "test"
           }
         ])
-        alert("Message sent")
-        }
+        alert("Message sent")   
       }
     }
     main()
