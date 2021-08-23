@@ -23,7 +23,6 @@
   <h4 id="displayName"><b>สวัสดีคุณ </b> </h4>
   <label>คัดลอกข้อความข้างล่างนี้</label>
   <h3 id="userId"><b></b></h3>
-  <button onclick="CopyUserID">คัดลอก</button>
   <p id="statusMessage"><b>statusMessage:</b> </p>
   <p id="decodedIDToken"><b>email:</b> </p>
   <p id="type"><b>type:</b> </p>
@@ -54,17 +53,6 @@
 
   <script src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script> 
   <script>
-    
-    function CopyUserID{
-      var CopyText = document.getElementById("userId");
-
-      CopyText.select();
-      CopyText.setSelectionRange(0,99999);
-
-      navigator.clipboard.writeText(CopyText.value);
-      alert("สำเร็จ")
-    }
-
     
     function createUniversalLink() {
     }
